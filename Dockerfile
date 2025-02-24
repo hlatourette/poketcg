@@ -1,4 +1,4 @@
-FROM ghcr.io/gbdev/rgbds:master AS builder
+FROM ghcr.io/gbdev/rgbds:master AS build
 RUN apt-get update && apt-get install -y && \
     apt-get autoremove && \
     apt-get -y clean && \
@@ -7,3 +7,7 @@ RUN apt-get update && apt-get install -y && \
 COPY . /usr/local/src/poketcg
 WORKDIR /usr/local/src/poketcg
 RUN make
+
+FROM scratch AS build-export
+COPY --from=build /usr/local/src/poketcg/poketcg.gbc /
+WORKDIR /
