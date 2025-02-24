@@ -12,36 +12,16 @@ This is a disassembly of Pokémon TCG.
 
 ### Docker
 ```
-docker build [--target builder] -t poketcg .
+sudo docker build --target=build-export --output type=local,dest=./output .
 ```
 
 ## Test
 N/A
 
 ## Run
-
-### Manual
-```<gameboy/emulator> poketcg.gbc```
-
-### Docker
 ```
-docker run -it --rm --name poketcg poketcg
-docker cp <containerId>:/file/path/within/container /host/path/target
-chown <user> poketcg.gbc
 <gameboy/emulator> poketcg.gbc
 ```
 
-[poketcg2]: https://github.com/pret/poketcg2
-[pokered]: https://github.com/pret/pokered
-[pokeyellow]: https://github.com/pret/pokeyellow
-[pokegold]: https://github.com/pret/pokegold
-[pokecrystal]: https://github.com/pret/pokecrystal
-[pokepinball]: https://github.com/pret/pokepinball
-[pokeruby]: https://github.com/pret/pokeruby
-[pokefirered]: https://github.com/pret/pokefirered
-[pokeemerald]: https://github.com/pret/pokeemerald
-[symbols]: https://github.com/pret/poketcg/tree/symbols
-[discord]: https://discord.gg/d5dubZ3
-[irc]: https://web.libera.chat/?#pret
-[ci]: https://github.com/pret/poketcg/actions
-[ci-badge]: https://github.com/pret/poketcg/actions/workflows/main.yml/badge.svg
+[ci]: https://github.com/hlatourette/poketcg/actions
+[ci-badge]: https://github.com/hlatourette/poketcg/actions/workflows/main.yml/badge.svg
