@@ -12,7 +12,7 @@ This is a disassembly of Pokémon TCG.
 
 ### Docker
 ```
-sudo docker build --target=build-export --output type=local,dest=./output .
+docker build --target=build-export --output type=local,dest=./output .
 ```
 
 ## Test
