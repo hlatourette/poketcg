@@ -1,34 +1,35 @@
 # Pokémon TCG [![Build Status][ci-badge]][ci]
-
 This is a disassembly of Pokémon TCG.
 
-It builds the following ROM:
-
-- Pokémon Trading Card Game (U) [C][!].gbc `sha1: 0f8670a583255cff3e5b7ca71b5d7454d928fc48`
-
-To assemble, first download RGBDS (https://github.com/gbdev/rgbds/releases) and extract it to /usr/local/bin.
-Run `make` in your shell.
-
-This will output a file named "poketcg.gbc".
 
 
-## See also
+## Build
 
-- [**Symbols**][symbols]
-- **Discord:** [pret][discord]
-- **IRC:** [libera#pret][irc]
+### Manual
+1. Install [rgbds](https://github.com/gbdev/rgbds) and extract to ```/usr/local/bin```
 
-Other disassembly projects:
+2. ```make```
 
-- [**Pokémon TCG 2**][poketcg2]
-- [**Pokémon Red/Blue**][pokered]
-- [**Pokémon Yellow**][pokeyellow]
-- [**Pokémon Gold/Silver**][pokegold]
-- [**Pokémon Crystal**][pokecrystal]
-- [**Pokémon Pinball**][pokepinball]
-- [**Pokémon Ruby**][pokeruby]
-- [**Pokémon FireRed**][pokefirered]
-- [**Pokémon Emerald**][pokeemerald]
+### Docker
+```
+docker build [--target builder] -t poketcg .
+```
+
+## Test
+N/A
+
+## Run
+
+### Manual
+```<gameboy/emulator> poketcg.gbc```
+
+### Docker
+```
+docker run -it --rm --name poketcg poketcg
+docker cp <containerId>:/file/path/within/container /host/path/target
+chown <user> poketcg.gbc
+<gameboy/emulator> poketcg.gbc
+```
 
 [poketcg2]: https://github.com/pret/poketcg2
 [pokered]: https://github.com/pret/pokered
